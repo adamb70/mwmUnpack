@@ -88,6 +88,27 @@ class MWMhandler(object):
             part.materialDesc.debug_print()
         print('### End Materials')
 
+    def print_lod_data(self):
+        lods = self.mwm['LODs']
+        print('\n### LODs')
+        for lod in lods:
+            lod.debug_print()
+        print('### End LODs')
+
+    def print_mesh_sections(self):
+        sections = self.mwm["Sections"]
+        print('\n### Mesh Sections')
+        for section in sections:
+            section.debug_print()
+        print('### End Mesh Sections')
+
+    def print_dummies(self):
+        dummies = self.mwm['Dummies']
+        print('\n### Dummies')
+        for d in dummies.values():
+            d.debug_print()
+        print('### End Dummies')
+
     def get_bone_names(self):
         return [x.name for x in self.mwm['Bones']]
 

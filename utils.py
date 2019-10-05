@@ -400,6 +400,9 @@ class MeshSectionInfo(object):
             flag &= meshsectionmeshinfo.Export(writer)
         return flag
 
+    def debug_print(self):
+        print({'name': self.name, 'meshes': self.meshes})
+
 class Vector4(object):
     def __init__(self, x=0.0, y=0.0, z=0.0, w=0.0):
         self.x, self.y, self.z, self.w = x, y, z, w
@@ -689,6 +692,9 @@ class LODDescriptor(object):
         writer.writeFloat(self.distance)
         writer.writeString7(self.model)
         writer.writeString7(self.render_quality)
+
+    def debug_print(self):
+        print({'distance': self.distance, 'model': self.model, 'render_quality': self.render_quality})
 
 class ModelFractures(object):
     def __init__(self):

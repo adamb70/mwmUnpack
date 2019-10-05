@@ -13,6 +13,9 @@ class MyModelDummy(object):
         self.customdata = {}
         self.matrix = Matrix()
 
+    def debug_print(self):
+        print(f"'name': {self.name}, 'customdata': {self.customdata}")
+
 
 def read_dummies(stream, **kwargs):
     dummies = {}
